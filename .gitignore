@@ -1,3 +1,41 @@
+## Created by Chad
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+.vs/
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/
+ipch/
+*.opensdf
+*.sdf
+*.VC.db
+
+# VS Code settings if you use VSCode alongside
+.vscode/
+
+# CMake build artifacts if you use CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Other temporary files
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+
+
+## Created by GITHUB
+
 # Prerequisites
 *.d
 
