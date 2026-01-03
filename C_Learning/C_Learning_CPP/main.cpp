@@ -1,11 +1,12 @@
 // C_Learning_CPP.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+void ch4();
 #include <iostream>
 
 int main()
 {
     std::cout << "Hello from C++\n";
+    ch4();
     return 0;
 }
 
