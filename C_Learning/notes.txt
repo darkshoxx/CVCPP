@@ -1,0 +1,8 @@
+Trying to write down my thoughts on integers in C and C++. My background is pure mathematics and Python and I have touched on many other languages before. I'm currently trying to learn C and C++ at the same time and am struggling HARD with how C deals with conversion between different integer types. There seems to be a cascade of issues when going from a large integer type to a smaller one. All I want is to truncate off the highest bytes. That can't be that complicated, right?
+
+First of all, since the sizes of int, long etc. are platform dependent, I will practically refuse to use them unless in super short loops. So we at least don't have to worry about that. For all intents and purposes I will deal with fixed-width integers. 
+I have a function which returns an unsigned 64 bit integer. It's receiving a value that fits into a signed 16 bit integer.
+
+...
+
+Ah I found my mistake. I chose "truncation" as the hill to die on. What I wanted was "value preservation", which is guaranteed in the context I expected it.

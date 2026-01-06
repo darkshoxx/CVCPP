@@ -1,26 +1,44 @@
 #include <iostream>
+#include <climits>
+
+using std::cout;
+using std::endl;
+using std::numeric_limits;
+
+template <typename T>
+constexpr T my_pow(T base, unsigned int exp)
+{
+	T result = 1;
+	if (base == 2) {
+		result <<= exp;
+	}
+	else {
+		for (unsigned int i = 0; i < exp; i++)
+		{
+			result *= base;
+		}
+	}
+	return result;
+}
+static_assert(my_pow<uint8_t>(2, 7) == 128, "8-bit power failed");
+static_assert(my_pow<uint16_t>(2, 7) == 128, "16-bit power failed");
+static_assert(my_pow<uint32_t>(2, 7) == 128, "32-bit power failed");
+static_assert(my_pow<uint64_t>(2, 7) == 128, "64-bit power failed");
+static_assert(my_pow<uint32_t>(10, 3) == 1000, "Base-10 power failed");
 
 void ch4()
 {
-	std::cout << "CH 4 is here! Even in C++";
-	int my_int;
-	short my_short;
-	long my_long;
-	long long my_long_long;
 
-	unsigned int my_uint;
-	unsigned short my_ushort;
-	unsigned long my_ulong;
-	unsigned long long my_ulong_long;
+	cout << "CH 4 is here! Even in C++";
+	int8_t my_char;
+	my_char = my_pow<int8_t>(2, 6) - 1;
+	my_char += my_pow<int8_t>(2, 6);
+	cout << "\nMy Char value:\n" << static_cast<int>(my_char);
+	if (my_char == numeric_limits<int8_t>::max())
+	{
+		cout << "\nLIMIT!";
+	}
+	my_char++;
+	cout << "\nAnd if I add one more:\n" << static_cast<int>(my_char);
 
-	my_int = pow(2, 31) - 1;
-	my_short = pow(2, 15) - 1;
-	my_long = pow(2, 15) - 1;
-	my_long_long = pow(2, 63) - 1;
-	std::cout << "\nint:\n";
-	std::cout << my_int;
-	std::cout << "\nshort:\n";
-	std::cout << my_short;
-	std::cout << "\nlong long:\n";
-	std::cout << my_long_long;
 }
