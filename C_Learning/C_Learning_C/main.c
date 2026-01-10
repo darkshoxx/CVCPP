@@ -1,12 +1,14 @@
 // C_Learning_C.cpp : This file contains the 'main' function. Program execution begins and ends there.
 void ch4(void);
+void ch5(void);
+void ch6(void);
 
 #include <stdio.h>
 
 int main(void)
 {
     printf("Hello from C\n");
-    ch4();
+    ch6();
     return 0;
 }
 

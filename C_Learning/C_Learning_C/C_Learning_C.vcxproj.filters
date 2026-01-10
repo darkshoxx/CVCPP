@@ -21,5 +21,11 @@
     <ClCompile Include="ch4.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ch5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ch6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
